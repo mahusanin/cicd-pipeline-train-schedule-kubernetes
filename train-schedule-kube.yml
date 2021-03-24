@@ -1,3 +1,4 @@
+apiVersion: apps/v1
 kind: Service
 apiVersion: v1
 metadata:
@@ -12,7 +13,6 @@ spec:
     nodePort: 8080
 
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
