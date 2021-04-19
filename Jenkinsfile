@@ -1,8 +1,7 @@
 pipeline {
     agent any
     environment {
-        //be sure to replace "willbla" with your own Docker Hub username
-        DOCKER_IMAGE_NAME = "asadleo94/train-schedule"
+        DOCKER_IMAGE_NAME = "cloudyrion_images"
     }
     stages {
         stage('Build') {
@@ -31,7 +30,7 @@ pipeline {
             }
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
+                    docker.withRegistry('https://173151801028.dkr.ecr.eu-central-1.amazonaws.com', 'ecr:eu-central-1:AWS_Login') {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest")
                     }
