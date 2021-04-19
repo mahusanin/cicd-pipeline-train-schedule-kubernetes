@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE_NAME = "cloudyrion_images"
+        DOCKER_IMAGE_NAME = "trainapp"
     }
     stages {
         stage('Build') {
